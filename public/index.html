@@ -1,12 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Sensors Stuff CHANGE ME</title>
-  <meta name="description" content="CHANGE ME">
-</head>
-<body>
-  <h1>Sensors</h1>
-</body>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.4.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.4.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <!-- Get Firebase UI for login -->
+    <script defer src="https://cdn.firebase.com/libs/firebaseui/3.4.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.0/firebaseui.css" />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen">
+    <!-- Run Main Javascript -->
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <h1>
+      Sensor Project
+    </h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="app-container" style="display:none;">
+      Welcome to thing!
+    </div>
+  </body>
 </html>
