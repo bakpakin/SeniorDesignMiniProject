@@ -1,3 +1,5 @@
+# Ignore firebase cache
+.firebase
 
 # Created by https://www.gitignore.io/api/node
 
