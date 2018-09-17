@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to Firebase Hosting</title>
@@ -21,14 +22,35 @@
     <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen">
     <!-- Run Main Javascript -->
     <script defer src="/js/main.js"></script>
+
+    <script type="text/javascript">
+    var number=Math.floor(Math.random()*100);
+        var number2=Math.floor(Math.random()*100);
+    </script>
+
   </head>
-  <body>
+  <body style="background-color: pink; text-align:center">
     <h1>
       Sensor Project
     </h1>
-    <div id="firebaseui-auth-container"></div>
-    <div id="app-container" style="display:none;">
-      Welcome to thing!
-    </div>
+    <div id="firebaseui-auth-container"></div> 
+
+    <div id="app-container" style="display:none;"></div>
+   <h2 style="color:red">
+      the temperature is 
+      <script type="text/javascript">
+        document.write(number)
+      </script>
+      degrees fahrenheit
+    </h2>
+
+     <h2 style="color:blue">
+      the humidity is 
+      <script type="text/javascript">
+        document.write(number2) 
+      </script>
+      %
+    </h2>
+
   </body>
 </html>
