@@ -24,8 +24,8 @@
     <script defer src="/js/main.js"></script>
 
     <script type="text/javascript">
-    var number=Math.floor(Math.random()*100);
-        var number2=Math.floor(Math.random()*100);
+    var temperaturerandom=Math.floor(Math.random()*100);
+    var humidityrandom=Math.floor(Math.random()*100);
     </script>
 
   </head>
@@ -39,7 +39,7 @@
    <h2 style="color:red">
       the temperature is 
       <script type="text/javascript">
-        document.write(number)
+        document.write(temperaturerandom)
       </script>
       degrees fahrenheit
     </h2>
@@ -47,10 +47,14 @@
      <h2 style="color:blue">
       the humidity is 
       <script type="text/javascript">
-        document.write(number2) 
+        document.write(humidityrandom) 
       </script>
       %
     </h2>
+
+    <p>
+        <ol id= "dispinfo"></ol>
+    </p>
 
   </body>
 </html>

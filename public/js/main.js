@@ -10,6 +10,11 @@ function pageLogin() {
   ui.start('#firebaseui-auth-container', uiConfig);
 }
 
+function randomNum(){
+  var temperaturerandom=Math.floor(Math.random()*80);
+  var humidityrandom=Math.random();
+}
+
 /* Generate initial data (fake sensors for new users) */
 function getInitialData(myData) {
   return myData.get()
@@ -24,13 +29,13 @@ function getInitialData(myData) {
               sensorId: '12345abcdef',
               name: 'Living Room',
               type: 'temperature',
-              temperature: 66 // farenheight
+              temperature: temperaturerandom // farenheight
             },
             {
               sensorId: '9d123baplq',
               name: 'Kitchen',
               type: 'temperature',
-              temperature: 74 // farenheight
+              temperature: temperaturerandom // farenheight
             }
           ],
           humiditySensors: [
@@ -38,7 +43,7 @@ function getInitialData(myData) {
               sensorId: 'jabdl16391',
               name: 'Bedroom',
               type: 'humidity',
-              humidity: 0.73 // fraction from 0 to 1
+              humidity: humidityrandom // fraction from 0 to 1
             }
           ],
         };
@@ -51,6 +56,10 @@ function getInitialData(myData) {
           });
       }
     });
+    var li = createElement('li', myData.tempSensors.name + ':' + myData.tempSensors.temperature);
+    li.parent(dispinfo);
+    var li2 = createElement('li2', myData.humiditySensors.name + ':' + myData.humiditySensors.humidity);
+    li.parent(dispinfo)
 }
 
 // Show root functionality
