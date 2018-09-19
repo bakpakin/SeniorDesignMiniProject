@@ -10,36 +10,30 @@ function pageLogin() {
   ui.start('#firebaseui-auth-container', uiConfig);
 }
 
+// Generate some random data
 function genRandomData() {
   return {
-    tempSensors: [
+    sensorData: [
       {
         sensorId: '12345abcdef',
         name: 'Living Room',
-        type: 'temperature',
-        temperature: Math.floor(Math.random() * 80)
+        temperature: Math.floor(Math.random() * 80),
+        humidity: Math.random()
       },
       {
         sensorId: '9d123baplq',
         name: 'Kitchen',
-        type: 'temperature',
-        temperature: Math.floor(Math.random() * 80)
-      }
-    ],
-    humiditySensors: [
+        temperature: Math.floor(Math.random() * 80),
+        humidity: Math.random()
+      },
       {
         sensorId: 'jabdl16391',
         name: 'Bedroom',
-        type: 'humidity',
+        temperature: Math.floor(Math.random() * 80),
         humidity: Math.random()
       }
-    ],
+    ]
   };
-}
-
-function randomNum(){
-  var temperaturerandom=Math.floor(Math.random()*80);
-  var humidityrandom=Math.random();
 }
 
 /* Generate initial data (fake sensors for new users) */
@@ -60,10 +54,7 @@ function getInitialData(myData) {
           });
       }
     });
-    var li = createElement('li', myData.tempSensors.name + ':' + myData.tempSensors.temperature);
-    li.parent(dispinfo);
-    var li2 = createElement('li2', myData.humiditySensors.name + ':' + myData.humiditySensors.humidity);
-    li.parent(dispinfo)
+   
 }
 
 // Show root functionality
@@ -108,7 +99,23 @@ function pageApp() {
 // Called when we get new sensor data. Update the display in this function.
 function onNewData(data) {
   console.log('got data: ' + JSON.stringify(data));
+  console.log(data.sensorData[1].humidity, data.sensorData[1].name, data.sensorData[1].temperature);
+  document.getElementById("insert").innerHTML =   "Room: " + data.sensorData[1].name;
+  document.getElementById("insert2").innerHTML =  "Humidity: " + data.sensorData[1].humidity;
+  document.getElementById("insert3").innerHTML =  "Temperature: " + data.sensorData[1].temperature;
+
+
+  document.getElementById("insert4").innerHTML =  "Room: " + data.sensorData[0].name ;
+  document.getElementById("insert5").innerHTML =  "Humidity: " + data.sensorData[0].humidity ;
+  document.getElementById("insert6").innerHTML =  "Temperature: " + data.sensorData[0].temperature ;
+  
+
+  document.getElementById("insert7").innerHTML =  "Room: " + data.sensorData[2].name;
+  document.getElementById("insert8").innerHTML =  "Humidity: " + data.sensorData[2].humidity;
+  document.getElementById("insert9").innerHTML =  "Temperature: " + data.sensorData[2].temperature;
 }
+
+
 
 // When the page finishes loading, show different content based on the path
 document.addEventListener('DOMContentLoaded', function() {
