@@ -11,6 +11,7 @@
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/5.4.2/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.4.2/firebase-firestore.js"></script>
+
     <script defer src="/__/firebase/5.4.2/firebase-messaging.js"></script>
     <script defer src="/__/firebase/5.4.2/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
@@ -28,6 +29,7 @@
     var humidityrandom=Math.floor(Math.random()*100);
     </script>
 
+
   </head>
   <body style="background-color: pink; text-align:center">
     <h1>
@@ -36,25 +38,14 @@
     <div id="firebaseui-auth-container"></div> 
 
     <div id="app-container" style="display:none;"></div>
-   <h2 style="color:red">
-      the temperature is 
-      <script type="text/javascript">
-        document.write(temperaturerandom)
-      </script>
-      degrees fahrenheit
+
+     <h2 style="color:red">
+      <p id="insert"></p>
+<p id="insert2"></p>
+<p id="insert3"></p>
     </h2>
 
-     <h2 style="color:blue">
-      the humidity is 
-      <script type="text/javascript">
-        document.write(humidityrandom) 
-      </script>
-      %
-    </h2>
 
-    <p>
-        <ol id= "dispinfo"></ol>
-    </p>
 
   </body>
 </html>
