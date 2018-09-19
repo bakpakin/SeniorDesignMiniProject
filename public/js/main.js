@@ -18,19 +18,19 @@ function genRandomData() {
         sensorId: '12345abcdef',
         name: 'Living Room',
         temperature: Math.floor(Math.random() * 80),
-        humidity: Math.random()
+        humidity: Number(Math.random().toPrecision(1))
       },
       {
         sensorId: '9d123baplq',
         name: 'Kitchen',
         temperature: Math.floor(Math.random() * 80),
-        humidity: Math.random()
+        humidity: Number(Math.random().toPrecision(1))
       },
       {
         sensorId: 'jabdl16391',
         name: 'Bedroom',
         temperature: Math.floor(Math.random() * 80),
-        humidity: Math.random()
+        humidity: Number(Math.random().toPrecision(1))
       }
     ]
   };
