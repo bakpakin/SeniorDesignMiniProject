@@ -10,6 +10,33 @@ function pageLogin() {
   ui.start('#firebaseui-auth-container', uiConfig);
 }
 
+function genRandomData() {
+  return {
+    tempSensors: [
+      {
+        sensorId: '12345abcdef',
+        name: 'Living Room',
+        type: 'temperature',
+        temperature: Math.floor(Math.random() * 80)
+      },
+      {
+        sensorId: '9d123baplq',
+        name: 'Kitchen',
+        type: 'temperature',
+        temperature: Math.floor(Math.random() * 80)
+      }
+    ],
+    humiditySensors: [
+      {
+        sensorId: 'jabdl16391',
+        name: 'Bedroom',
+        type: 'humidity',
+        humidity: Math.random()
+      }
+    ],
+  };
+}
+
 function randomNum(){
   var temperaturerandom=Math.floor(Math.random()*80);
   var humidityrandom=Math.random();
@@ -23,30 +50,7 @@ function getInitialData(myData) {
       if (result.exists) {
         return result.data();
       } else {
-        const initialData = {
-          tempSensors: [
-            {
-              sensorId: '12345abcdef',
-              name: 'Living Room',
-              type: 'temperature',
-              temperature: temperaturerandom // farenheight
-            },
-            {
-              sensorId: '9d123baplq',
-              name: 'Kitchen',
-              type: 'temperature',
-              temperature: temperaturerandom // farenheight
-            }
-          ],
-          humiditySensors: [
-            {
-              sensorId: 'jabdl16391',
-              name: 'Bedroom',
-              type: 'humidity',
-              humidity: humidityrandom // fraction from 0 to 1
-            }
-          ],
-        };
+        const initialData = genRandomData();
         return myData.set(initialData)
           .then(() => {
             return myData.get()
@@ -78,6 +82,11 @@ function pageApp() {
         timestampsInSnapshots: true
       });
       const myData = db.collection('users').doc(user.uid);
+
+      // Simulate random data
+      setInterval(() => {
+        myData.set(genRandomData());
+      }, 2000);
 
       // Get data.
       const datap = getInitialData(myData);
