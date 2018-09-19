@@ -54,7 +54,7 @@ function getInitialData(myData) {
           });
       }
     });
-   
+
 }
 
 // Show root functionality
@@ -77,7 +77,7 @@ function pageApp() {
       // Simulate random data
       setInterval(() => {
         myData.set(genRandomData());
-      }, 2000);
+      }, 4000);
 
       // Get data.
       const datap = getInitialData(myData);
@@ -99,16 +99,14 @@ function pageApp() {
 // Called when we get new sensor data. Update the display in this function.
 function onNewData(data) {
   console.log('got data: ' + JSON.stringify(data));
-  console.log(data.sensorData[1].humidity, data.sensorData[1].name, data.sensorData[1].temperature);
-  document.getElementById("insert").innerHTML =   "Room: " + data.sensorData[1].name;
+
+  document.getElementById("insert1").innerHTML =   "Room: " + data.sensorData[1].name;
   document.getElementById("insert2").innerHTML =  "Humidity: " + data.sensorData[1].humidity;
   document.getElementById("insert3").innerHTML =  "Temperature: " + data.sensorData[1].temperature;
 
-
-  document.getElementById("insert4").innerHTML =  "Room: " + data.sensorData[0].name ;
-  document.getElementById("insert5").innerHTML =  "Humidity: " + data.sensorData[0].humidity ;
-  document.getElementById("insert6").innerHTML =  "Temperature: " + data.sensorData[0].temperature ;
-  
+  document.getElementById("insert4").innerHTML =  "Room: " + data.sensorData[0].name;
+  document.getElementById("insert5").innerHTML =  "Humidity: " + data.sensorData[0].humidity;
+  document.getElementById("insert6").innerHTML =  "Temperature: " + data.sensorData[0].temperature;
 
   document.getElementById("insert7").innerHTML =  "Room: " + data.sensorData[2].name;
   document.getElementById("insert8").innerHTML =  "Humidity: " + data.sensorData[2].humidity;
