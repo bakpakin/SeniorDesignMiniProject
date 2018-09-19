@@ -97,6 +97,16 @@ function onNewData(data) {
   document.getElementById("insert").innerHTML = "Room: " + data.sensorData[1].name;
   document.getElementById("insert2").innerHTML =  "Humidity: " + data.sensorData[1].humidity;
   document.getElementById("insert3").innerHTML =  "Temperature: " + data.sensorData[1].temperature;
+
+
+  document.getElementById("insert4").innerHTML = "Room: " + data.sensorData[0].name;
+  document.getElementById("insert5").innerHTML =  "Humidity: " + data.sensorData[0].humidity;
+  document.getElementById("insert6").innerHTML =  "Temperature: " + data.sensorData[0].temperature;
+  
+
+  document.getElementById("insert7").innerHTML = "Room: " + data.sensorData[2].name;
+  document.getElementById("insert8").innerHTML =  "Humidity: " + data.sensorData[2].humidity;
+  document.getElementById("insert9").innerHTML =  "Temperature: " + data.sensorData[2].temperature;
 }
 
 
