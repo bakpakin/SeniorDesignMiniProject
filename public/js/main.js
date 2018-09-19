@@ -12,6 +12,7 @@ function pageLogin() {
 
   var temperaturerandom= Math.floor(Math.random()*80);
   var humidityrandom= Math.random();
+  var humidityran = Number(humidityrandom.toPrecision(1));
 
 
 /* Generate initial data (fake sensors for new users) */
@@ -28,19 +29,19 @@ function getInitialData(myData) {
               sensorId: '12345abcdef',
               name: 'Living Room',
               temperature: temperaturerandom, //fahrenheit
-              humidity: humidityrandom
+              humidity: humidityran
             },
             {
               sensorId: '9d123baplq',
               name: 'Kitchen',
               temperature: temperaturerandom+24,
-              humidity: humidityrandom*.12
+              humidity: humidityran*.12
             },
             {
               sensorId: 'jabdl16391',
               name: 'Bedroom',
               temperature: temperaturerandom+34,
-              humidity: humidityrandom*.54
+              humidity: humidityran*.54
             }
           ],
         };
@@ -94,17 +95,17 @@ function pageApp() {
 function onNewData(data) {
   console.log('got data: ' + JSON.stringify(data));
   console.log(data.sensorData[1].humidity, data.sensorData[1].name, data.sensorData[1].temperature);
-  document.getElementById("insert").innerHTML = "Room: " + data.sensorData[1].name;
+  document.getElementById("insert").innerHTML =   "Room: " + data.sensorData[1].name;
   document.getElementById("insert2").innerHTML =  "Humidity: " + data.sensorData[1].humidity;
   document.getElementById("insert3").innerHTML =  "Temperature: " + data.sensorData[1].temperature;
 
 
-  document.getElementById("insert4").innerHTML = "Room: " + data.sensorData[0].name;
-  document.getElementById("insert5").innerHTML =  "Humidity: " + data.sensorData[0].humidity;
-  document.getElementById("insert6").innerHTML =  "Temperature: " + data.sensorData[0].temperature;
+  document.getElementById("insert4").innerHTML =  "Room: " + data.sensorData[0].name ;
+  document.getElementById("insert5").innerHTML =  "Humidity: " + data.sensorData[0].humidity ;
+  document.getElementById("insert6").innerHTML =  "Temperature: " + data.sensorData[0].temperature ;
   
 
-  document.getElementById("insert7").innerHTML = "Room: " + data.sensorData[2].name;
+  document.getElementById("insert7").innerHTML =  "Room: " + data.sensorData[2].name;
   document.getElementById("insert8").innerHTML =  "Humidity: " + data.sensorData[2].humidity;
   document.getElementById("insert9").innerHTML =  "Temperature: " + data.sensorData[2].temperature;
 }
