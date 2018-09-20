@@ -76,4 +76,4 @@ Use `npm run deploy` to deploy changes.
 ## Testing
 
 Use `npm test` to run nightwatch tests. Requires chrome to
-run unit tests.
+run e2e tests.
