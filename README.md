@@ -21,24 +21,24 @@ in the database that contains a list of all sensors and their current readings.
 Example document in JSON format:
 ```json
 {
-  sensorData: [
+  "sensorData": [
     {
-      sensorId: '12345abcdef',
-      name: 'Living Room',
-      temperature: 76,
-      humidity: 0.23423
+      "sensorId": "12345abcdef",
+      "name": "Living Room",
+      "temperature": 76,
+      "humidity": 0.23423
     },
     {
-      sensorId: '9d123baplq',
-      name: 'Kitchen',
-      temperature: 68,
-      humidity: 0.34245
+      "sensorId": "9d123baplq",
+      "name": "Kitchen",
+      "temperature": 68,
+      "humidity": 0.34245
     },
     {
-      sensorId: 'jabdl16391',
-      name: 'Bedroom',
-      temperature: 71,
-      humidity: 0.20381
+      "sensorId": "jabdl16391",
+      "name": "Bedroom",
+      "temperature": 71,
+      "humidity": 0.20381
     }
   ]
 }
