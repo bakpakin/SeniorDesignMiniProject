@@ -10,6 +10,17 @@ function pageLogin() {
   ui.start('#firebaseui-auth-container', uiConfig);
 }
 
+// Used for automated tests to log in
+function hiddenLogin() {
+  const e = 'example@example.com';
+  const p = 'password1234';
+  firebase.auth().signInWithEmailAndPassword(e, p)
+    .catch(_ => firebase.auth().createUserWithEmailAndPassword(e, p))
+    .then(_ => {
+      window.location.href = '/';
+    });
+}
+
 // Generate some random data
 function genRandomData() {
   return {
@@ -100,7 +111,7 @@ function pageApp() {
 function onNewData(data) {
   console.log('got data: ' + JSON.stringify(data));
 
-  document.getElementById("insert1").innerHTML =   "Room: " + data.sensorData[1].name;
+  document.getElementById("insert1").innerHTML =  "Room: " + data.sensorData[1].name;
   document.getElementById("insert2").innerHTML =  "Humidity: " + data.sensorData[1].humidity;
   document.getElementById("insert3").innerHTML =  "Temperature: " + data.sensorData[1].temperature;
 

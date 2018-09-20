@@ -1,0 +1,30 @@
+{
+  "name": "seniordesignminiproject",
+  "version": "1.0.0",
+  "description": "Simple WebApp for monitoring humidity and temperature sensors.",
+  "main": "nightwatch.globals.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "chromedriver": "^2.42.0",
+    "firebase-tools": "^4.2.1",
+    "nightwatch": "^0.9.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "nightwatch",
+    "serve": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakpakin/SeniorDesignMiniProject.git"
+  },
+  "author": "Calvin Rose, Amanda Fung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakpakin/SeniorDesignMiniProject/issues"
+  },
+  "homepage": "https://github.com/bakpakin/SeniorDesignMiniProject#readme"
+}

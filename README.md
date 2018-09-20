@@ -4,14 +4,19 @@ A Web Application for monitoring sensors. Hosted at
 
 ## Development
 
-This project uses firebase for managing deployment.
-Install the firebase CLI with [npm](https://nodejs.org/en/)
+Use `npm` to install dependencies for development.
 
 ```sh
-npm i -g firebase-tools
+npm i
 ```
 
-Once the firebase cli is installed, use `firebase serve` to run locally.
+Run `npm run serve` to test locally.
 
 ## Deployment
-Use `firebase deploy` to deploy changes.
+
+Use `npm run deploy` to deploy changes.
+
+## Testing
+
+Use `npm test` to run nightwatch tests. Requires chrome to
+run unit tests.
