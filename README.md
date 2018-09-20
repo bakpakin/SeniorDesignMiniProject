@@ -77,3 +77,8 @@ Use `npm run deploy` to deploy changes.
 
 Use `npm test` to run nightwatch tests. Requires chrome to
 run e2e tests.
+
+## Individual Contribution
+
+Calvin: back end - cloud storage, regenerating random data, tests for verification
+Amanda: front end display, generate random data function
