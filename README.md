@@ -81,4 +81,5 @@ run e2e tests.
 ## Individual Contribution
 
 Calvin: back end - cloud storage, regenerating random data, tests for verification
+
 Amanda: front end display, generate random data function
